@@ -57,18 +57,58 @@
     }
 
     .hand {
-      width:50%;
-      height:6px;
+      width:6px;
+      height:50%;
       background:black;
       position: absolute;
-      top:50%;
+      left: 50%;
+      border-radius: 50% 50% 0 0;
+      transform-origin: bottom;
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    }
+
+    .hour-hand {
+      height: 25%;
+      top: 25%;
+    }
+
+    .min-hand {
+      height: 39%;
+      top: 11%;
     }
 
   </style>
 
   <script>
-
-
+var sturn = mturn = hturn = 0
+var prevs = prevm = prevh = 0
+const secondHand = document.getElementsByClassName('hour-hand')[0]
+const minHand = document.getElementsByClassName('min-hand')[0]
+const hourHand = document.getElementsByClassName('second-hand')[0]
+function setDate() {
+  const d = new Date()
+  const s = d.getSeconds() / 60
+  var m = d.getMinutes()
+  var h = d.getHours() % 12
+  if(s == 0 && prevs != 0){
+    sturn += 1
+    if(m == 0 && prevm != 0){
+      mturn += 1
+      if(h == 0 && prevh != 0) hturn += 1
+    }
+  }
+  m = (m + s) / 60
+  h = (h + m) / 12
+  secondHand.style.transform = `rotate(${h + hturn}turn)`
+  minHand.style.transform = `rotate(${m + mturn}turn)`
+  hourHand.style.transform = `rotate(${s + sturn}turn)`
+  prevs = s
+  prevm = m
+  prevh = h
+}
+setInterval(setDate, 1000)
+setDate()
   </script>
 </body>
 </html>
