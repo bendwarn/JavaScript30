@@ -97,7 +97,9 @@ function setDate() {
     sturn += 1
     if(m == 0 && prevm != 0){
       mturn += 1
-      if(h == 0 && prevh != 0) hturn += 1
+      if(h == 0 && prevh != 0){
+        hturn += 1
+      }
     }
   }
   m = (m + s) / 60
