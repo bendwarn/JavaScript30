@@ -24,6 +24,7 @@
     .panels {
       min-height:100vh;
       overflow: hidden;
+      display: flex;
     }
 
     .panel {
@@ -31,7 +32,6 @@
       box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
       color:white;
       text-align: center;
-      align-items:center;
       /* Safari transitionend event.propertyName === flex */
       /* Chrome + FF transitionend event.propertyName === flex-grow */
       transition:
@@ -41,6 +41,9 @@
       font-size: 20px;
       background-size:cover;
       background-position:center;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
 
@@ -54,6 +57,10 @@
       margin:0;
       width: 100%;
       transition:transform 0.5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1 0 auto;
     }
 
     .panel p {
@@ -68,6 +75,19 @@
 
     .panel.open {
       font-size:40px;
+      flex: 5;
+    }
+
+    .panel > *:first-child {
+      transform: translateY(-100%);
+    }
+
+    .panel.open-active > *:first-child, .panel.open-active > *:last-child {
+      transform: translateY(0);
+    }
+
+    .panel > *:last-child {
+      transform: translateY(100%);
     }
 
   </style>
@@ -102,7 +122,11 @@
   </div>
 
   <script>
-
+const panel = Array.from(document.getElementsByClassName('panel'))
+panel.map(p => p.addEventListener('click', e => p.classList.toggle('open')))
+panel.map(p => p.addEventListener('transitionend', e => {
+  if(e.propertyName == 'font-size') p.classList.toggle('open-active')
+}))
   </script>
 
 
