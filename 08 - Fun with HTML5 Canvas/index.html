@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+<canvas id="draw" width="800" height="800"></canvas>
+<script>
+draw.width = window.innerWidth
+draw.height = window.innerHeight
+const ctx = draw.getContext('2d')
+let hue = 0, maxLineWidth = 100, widthDelta = -1
+ctx.lineWidth = maxLineWidth
+ctx.lineCap = ctx.lineJoin = 'round'
+
+draw.addEventListener('mousemove', e => {
+  if(e.buttons < 1 || Math.abs(e.movementX) + Math.abs(e.movementY) == 0) return 0
+  ctx.strokeStyle = `hsl(${hue++},100%,50%)`
+  ctx.beginPath()
+  ctx.moveTo(e.x - e.movementX, e.y - e.movementY)
+  ctx.lineTo(e.x, e.y)
+  ctx.stroke()
+  ctx.lineWidth += widthDelta
+  if(ctx.lineWidth > maxLineWidth) widthDelta = -1
+  else if(ctx.lineWidth < 2) widthDelta = 1
+})
+</script>
+
+<style>
+  html, body {
+    margin:0;
+  }
+</style>
+
+</body>
+</html>
