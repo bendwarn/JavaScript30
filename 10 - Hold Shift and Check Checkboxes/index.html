@@ -99,6 +99,22 @@
   </div>
 
 <script>
+let lastClick = -1
+const items = document.querySelectorAll('.item input')
+function traceback(i, lastClick, delta, state) {
+  items[i].checked = state
+  if (i == lastClick) return
+  else traceback(i + delta, lastClick, delta, state)
+}
+items.forEach((item, i, inbox) => {
+  item.addEventListener('click', e => {
+    if (e.shiftKey == true && lastClick > -1) {
+      const delta = lastClick > i ? 1 : -1
+      traceback(i, lastClick, delta, item.checked)
+    }
+    lastClick = i
+  })
+})
 </script>
 </body>
 </html>
