@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+</head>
+<body>
+<script src="cornify.js"></script>
+<script>
+const keylog = []
+const secretCode = 'bendwarn'
+window.addEventListener('keyup', e => {
+  keylog.push(e.key)
+  if(secretCode.length < keylog.length) keylog.shift()
+  if(keylog.join('').includes(secretCode)) cornify_add()
+})
+</script>
+</body>
+</html>
