@@ -26,10 +26,27 @@
   </div>
 
 <script>
-  const addItems = document.querySelector('.add-items');
-  const itemsList = document.querySelector('.plates');
-  const items = [];
-
+  const addItems = document.querySelector('.add-items')
+  const itemsList = document.querySelector('.plates')
+  const items = JSON.parse(localStorage.getItem('items')) || []
+  const check = {true: ' checked', false: ''}
+  function itemToHTML({text, done}, i) {
+    return `<li><input type="checkbox"${check[done]} id="item${i}" data-index=${i}><label for="item${i}">${text}</label></li>`
+  }
+  addItems.addEventListener('submit', e => {
+    e.preventDefault()
+    const item = {text: addItems.item.value, done: false}
+    itemsList.innerHTML += itemToHTML(item, items.length)
+    items.push(item)
+    localStorage.items = JSON.stringify(items)
+    addItems.reset()
+  })
+  itemsList.addEventListener('click', e => {
+    if(!e.target.matches('input')) return
+    items[e.target.dataset.index].done = e.target.checked
+    localStorage.items = JSON.stringify(items)
+  })
+  itemsList.innerHTML = items.map(itemToHTML).join('')
 </script>
 
 
