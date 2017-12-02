@@ -57,7 +57,17 @@
         if (callNow) func.apply(context, args);
       };
     }
-
+    const imgslide = document.querySelectorAll('.slide-in')
+    function checkSlide(e) {
+      imgslide.forEach(img => {
+        const imgOffsetMid = img.offsetTop + img.height / 2
+        const imgOffsetBot = img.offsetTop + img.height
+        const isShown = imgOffsetMid < window.scrollY + window.innerHeight
+        const isBelow = window.scrollY < imgOffsetBot
+        img.classList.toggle('active', isShown && isBelow)
+      })
+    }
+    window.addEventListener('scroll', debounce(checkSlide))
   </script>
 
   <style>
