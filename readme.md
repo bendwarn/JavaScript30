@@ -13,6 +13,40 @@
 一開始就沒在跟你客氣的，不知道怎麼查 transition 或要用哪個 event 的話就沒辦法開始。套句名言：
 >這雖然是教學，但可不是鬧著玩的。
 
+話說回來，光是研究這裡怎麼使用 css 就很猛了。
+
+##### Table of Contents
+* [01 - JavaScript Drum Kit](https://bendwarn.github.io/JavaScript30/01 - JavaScript Drum Kit)
+* [02 - JS and CSS Clock](https://bendwarn.github.io/JavaScript30/02 - JS and CSS Clock)
+* [03 - CSS Variables](https://bendwarn.github.io/JavaScript30/03 - CSS Variables)
+* [04 - Array Cardio Day 1](https://bendwarn.github.io/JavaScript30/04 - Array Cardio Day 1)
+* [05 - Flex Panel Gallery](https://bendwarn.github.io/JavaScript30/05 - Flex Panel Gallery)
+* [06 - Type Ahead](https://bendwarn.github.io/JavaScript30/06 - Type Ahead)
+* [07 - Array Cardio Day 2](https://bendwarn.github.io/JavaScript30/07 - Array Cardio Day 2)
+* [08 - Fun with HTML5 Canvas](https://bendwarn.github.io/JavaScript30/08 - Fun with HTML5 Canvas)
+* [09 - Dev Tools Domination](https://bendwarn.github.io/JavaScript30/09 - Dev Tools Domination)
+* [10 - Hold Shift and Check Checkboxes](https://bendwarn.github.io/JavaScript30/10 - Hold Shift and Check Checkboxes)
+* [11 - Custom Video Player](https://bendwarn.github.io/JavaScript30/11 - Custom Video Player)
+* [12 - Key Sequence Detection](https://bendwarn.github.io/JavaScript30/12 - Key Sequence Detection)
+* [13 - Slide in on Scroll](https://bendwarn.github.io/JavaScript30/13 - Slide in on Scroll)
+* [14 - JavaScript References VS Copying](https://bendwarn.github.io/JavaScript30/14 - JavaScript References VS Copying)
+* [15 - LocalStorage](https://bendwarn.github.io/JavaScript30/15 - LocalStorage)
+* [16 - Mouse Move Shadow](https://bendwarn.github.io/JavaScript30/16 - Mouse Move Shadow)
+* [17 - Sort Without Articles](https://bendwarn.github.io/JavaScript30/17 - Sort Without Articles)
+* [18 - Adding Up Times with Reduce](https://bendwarn.github.io/JavaScript30/18 - Adding Up Times with Reduce)
+* [19 - Webcam Fun](https://bendwarn.github.io/JavaScript30/19 - Webcam Fun)
+* [20 - Speech Detection](https://bendwarn.github.io/JavaScript30/20 - Speech Detection)
+* [21 - Geolocation](https://bendwarn.github.io/JavaScript30/21 - Geolocation)
+* [22 - Follow Along Link Highlighter](https://bendwarn.github.io/JavaScript30/22 - Follow Along Link Highlighter)
+* [23 - Speech Synthesis](https://bendwarn.github.io/JavaScript30/23 - Speech Synthesis)
+* [24 - Sticky Nav](https://bendwarn.github.io/JavaScript30/24 - Sticky Nav)
+* [25 - Event Capture, Propagation, Bubbling and Once](https://bendwarn.github.io/JavaScript30/25 - Event Capture, Propagation, Bubbling and Once)
+* [26 - Stripe Follow Along Nav](https://bendwarn.github.io/JavaScript30/26 - Stripe Follow Along Nav)
+* [27 - Click and Drag](https://bendwarn.github.io/JavaScript30/27 - Click and Drag)
+* [28 - Video Speed Controller](https://bendwarn.github.io/JavaScript30/28 - Video Speed Controller)
+* [29 - Countdown Timer](https://bendwarn.github.io/JavaScript30/29 - Countdown Timer)
+* [30 - Whack A Mole](https://bendwarn.github.io/JavaScript30/30 - Whack A Mole)
+
 以下是原本的 readme
 
 ---
