@@ -39,7 +39,14 @@
 
 <button></button>
 <script>
-
+document.querySelectorAll('div').forEach(div => div.addEventListener(
+  'click',
+  e => {
+    console.log(e.target.classList)
+    e.stopPropagation()
+  },
+  {capture: false, once: true}
+))
 </script>
 </body>
 </html>
