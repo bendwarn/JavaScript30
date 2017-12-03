@@ -182,6 +182,17 @@
     </li>
   </ul>
 <script>
+const totalTime = Array.from(document.querySelectorAll('li'))
+  .map(li => li.dataset.time.split(':'))
+  .reduce((time, [min, sec]) => {
+    const sumsec = time.sec + +sec
+    const summin = time.min + +min
+    time.sec = sumsec % 60
+    time.min = (summin + Math.floor(sumsec / 60)) % 60
+    time.hour += Math.floor(summin / 60) + Math.floor(sumsec / 3600)
+    return time
+  }, {hour: 0, min: 0, sec: 0})
+console.log(totalTime)
 </script>
 </body>
 </html>
