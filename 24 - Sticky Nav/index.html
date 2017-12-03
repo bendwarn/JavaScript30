@@ -54,7 +54,16 @@
   </div>
 
 <script>
-
+const navtop = main.offsetTop
+window.addEventListener('scroll', e => {
+  if (navtop <= window.scrollY) {
+    document.body.style.paddingTop = main.offsetHeight + 'px'
+    document.body.classList.add('fix')
+  } else {
+    document.body.style.paddingTop = 0
+    document.body.classList.remove('fix')
+  }
+})
 </script>
 
 </body>

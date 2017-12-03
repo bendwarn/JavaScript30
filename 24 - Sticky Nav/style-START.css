@@ -23,6 +23,10 @@ body {
   transition: transform 0.5s;
 }
 
+.fix .site-wrap {
+  transform: scale(1);
+}
+
 header {
   text-align: center;
   height:50vh;
@@ -83,4 +87,13 @@ nav a {
   color:white;
   transition:all 0.2s;
   text-transform: uppercase;
+}
+
+.fix nav {
+  position: fixed;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.1);
+}
+
+.fix .logo {
+  max-width: 500px;
 }
