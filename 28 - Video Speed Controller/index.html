@@ -15,6 +15,16 @@
   </div>
 
 <script>
+const slider = document.querySelector('.speed')
+const bar = slider.querySelector('.speed-bar')
+const video = document.querySelector('.flex')
+const [min, max] = [0.4, 4]
+slider.addEventListener('mousemove', e => {
+  const percent = e.offsetY / slider.offsetHeight
+  bar.style.height = `${percent * 100}%`
+  video.playbackRate = (percent * (max - min) + min).toFixed(2)
+  bar.textContent = `${video.playbackRate}x`
+})
 </script>
 </body>
 </html>
