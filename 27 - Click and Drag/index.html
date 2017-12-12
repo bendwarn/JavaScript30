@@ -35,7 +35,19 @@
   </div>
 
 <script>
+const container = document.querySelector('.items')
+function drag(e) {
+  e.preventDefault()
+  container.scrollLeft -= e.movementX * container.scrollWidth / container.clientWidth
+}
+function toggle(force=true) {
+  container.classList.toggle('active', force)
+  if (force) container.addEventListener('mousemove', drag)
+  else container.removeEventListener('mousemove', drag)
+}
+container.addEventListener('mousedown', toggle)
+container.addEventListener('mouseup', toggle.bind(null, false))
+container.addEventListener('mouseleave', toggle.bind(null, false))
 </script>
-
-  </body>
+</body>
 </html>
