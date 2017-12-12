@@ -17,6 +17,6 @@
     - dropdownSection
       * dropdownContent
 
-弄成這麼多層是有原因的，root 不受 notransition 影響，這就是解法。
+弄成這麼多層是有原因的，root 不受 notransition 影響，這就是解法。因此在嘗試很久之後我也加上 dropdownRoot。
 
 實際看過 stripe 原始碼只會有個感想，實在太強了。每個為了解決 css 問題的細節組合在一起依然不會顯得雜亂無章，乍看多餘的部分其實都有它存在的道理。真要說有什麼能改進的地方大概就是 dropdownArrow 可以改用 :before。
