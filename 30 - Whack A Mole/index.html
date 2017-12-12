@@ -33,10 +33,31 @@
   </div>
 
 <script>
-  const holes = document.querySelectorAll('.hole');
-  const scoreBoard = document.querySelector('.score');
-  const moles = document.querySelectorAll('.mole');
-
+const holes = document.querySelectorAll('.hole')
+const scoreBoard = document.querySelector('.score')
+const moles = document.querySelectorAll('.mole')
+function random(max, min=0) {
+  return Math.floor(Math.random() * (max - min) + min)
+}
+function summon(timeleft) {
+  const target = random(6)
+  if(holes[target].classList.contains('up')) return summon(timeleft)
+  holes[target].classList.add('up')
+  setTimeout(holes[target].classList.remove.bind(holes[target].classList, 'up'), random(1000))
+  if(timeleft > 0) {
+    const next = random(1000)
+    setTimeout(summon.bind(null, timeleft - next), next)
+  }
+}
+function startGame() {
+  scoreBoard.textContent = 0
+  summon(random(10000, 5000))
+}
+moles.forEach(m => m.addEventListener('click', e => {
+  if (!e.isTrusted) return
+  ++scoreBoard.textContent
+  m.parentElement.classList.remove('up')
+}))
 </script>
 </body>
 </html>
